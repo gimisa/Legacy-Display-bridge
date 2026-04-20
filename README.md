@@ -31,9 +31,14 @@ This firmware runs a dormant, ultra-lightweight Web Server. When Home Assistant 
 
    
 ## 🚀 Software Installation (PlatformIO)
-You must edit the code to include your home Wi-Fi credentials. You can use either **PlatformIO** (Recommended) or the classic **Arduino IDE**.
-1. Clone this repository copy  platformIO file in VSCode or any editor with the PlatformIO extension.
-2. Open `src/main.cpp` and update your Wi-Fi credentials:
+This project is built using PlatformIO. If you do not have PlatformIO installed, it is essentially an extension for Visual Studio Code (VSCode). 
+👉 **[Read the Official PlatformIO Installation Guide Here](https://docs.platformio.org/en/latest/integration/ide/vscode.html)**
+
+Once PlatformIO is installed and running:
+1. Create a new project in PlatformIO and select the `AI Thinker ESP32-CAM` board.
+2. Replace the automatically generated `platformio.ini` file with the **`platformio.ini`** provided in this repository (This is CRITICAL as it enables the PSRAM required for the camera to function).
+3. Replace the `src/main.cpp` file with the **`main.cpp`** provided in this repository.
+4. Open `main.cpp` and insert your Wi-Fi credentials:
    ```cpp
    const char* ssid = "YOUR_WIFI_SSID";
    const char* password = "YOUR_WIFI_PASSWORD";
